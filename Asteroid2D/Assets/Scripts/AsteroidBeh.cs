@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Score;
 
 public class AsteroidBeh : MonoBehaviour
 {
@@ -95,6 +96,7 @@ public class AsteroidBeh : MonoBehaviour
     {
         if(isDestroyed == true)
         {
+            ScoreScript.ScoreValue += 50;
             Destroy(gameObject);
             int quantity = Random.Range(0, 4);
             for(int i = 0; i < quantity; i ++)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Score;
 
 public class ShardBeh : MonoBehaviour
 {
@@ -25,8 +26,8 @@ public class ShardBeh : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        ScoreScript.ScoreValue += 100;
         Destroy(gameObject);
-
     }
 
     void Start()

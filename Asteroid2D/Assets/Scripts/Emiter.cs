@@ -1,29 +1,32 @@
-﻿using System.Collections;
+﻿using Mono.Data.Sqlite;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
-public class Emiter : MonoBehaviour
+namespace EmiterSystem
 {
-    public GameObject BigAsteroid;
-
-    public Vector3 InitialCoords;
-
-    float tempTime;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Emiter : MonoBehaviour
     {
-       // Instantiate(BigAsteroid, InitialCoords, Quaternion.identity);
-    }
+        public GameObject BigAsteroid;
 
-    // Update is called once per frame
-    void Update()
-    {
-        tempTime += Time.deltaTime;
-        if (tempTime > 2)
+        public Vector3 InitialCoords;
+
+        float tempTime;
+
+        void Start()
         {
-            tempTime = 0;
-            Instantiate(BigAsteroid, InitialCoords, Quaternion.identity);
+            
+        }
+
+        void Update()
+        {
+            tempTime += Time.deltaTime;
+            if (tempTime > 2)
+            {
+                tempTime = 0;
+                Instantiate(BigAsteroid, InitialCoords, Quaternion.identity);
+            }
         }
     }
 }
