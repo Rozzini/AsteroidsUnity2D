@@ -36,7 +36,7 @@ namespace Ship
 			MenuButton.SetActive(false);
 			RestartButton.SetActive(false);
 			NameInputField.SetActive(false);
-			ShipArmor = 3;
+			ShipArmor = 1000000;
 			_rb = GetComponent<Rigidbody>();
 		}
 
@@ -94,7 +94,7 @@ namespace Ship
 
 		private void Impulse()
 		{
-			if (_rb.velocity.x < 10 || _rb.velocity.y < 10)
+			if (_rb.velocity.x < 3 || _rb.velocity.y < 3)
 			{
 				_rb.velocity += transform.up * impulseSpeed * Time.deltaTime;
 			}

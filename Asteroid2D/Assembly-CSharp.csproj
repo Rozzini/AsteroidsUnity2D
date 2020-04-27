@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AsteroidBeh.cs" />
-     <Compile Include="Assets\Scripts\DB.cs" />
      <Compile Include="Assets\Scripts\Emiter.cs" />
      <Compile Include="Assets\Scripts\EndGameScript.cs" />
      <Compile Include="Assets\Scripts\LivesScript.cs" />

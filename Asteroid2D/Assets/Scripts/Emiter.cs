@@ -14,11 +14,6 @@ namespace EmiterSystem
 
         float tempTime;
 
-        void Start()
-        {
-            
-        }
-
         void Update()
         {
             tempTime += Time.deltaTime;
