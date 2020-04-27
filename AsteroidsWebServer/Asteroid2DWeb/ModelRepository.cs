@@ -16,8 +16,6 @@ namespace Asteroid2DWeb
 
         public void AddPlayer(Model models)
         {
-            models.PlayerName = "aaa";
-            models.Score = 250;
             appDbContext.Models.Add(models);
             appDbContext.SaveChanges();
         }

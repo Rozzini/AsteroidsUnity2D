@@ -28,13 +28,10 @@ namespace Asteroid2DWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Model> Post(Model model)
+        public void Post(Model model)
         {
-            model.PlayerName = "asd";
-            model.Score = 500;
             _model.AddPlayer(model);
 
-            return CreatedAtAction("GetModel", new { id = model.Id }, model);
         }
 
         

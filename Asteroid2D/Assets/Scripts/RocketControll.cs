@@ -36,7 +36,7 @@ namespace Ship
 			MenuButton.SetActive(false);
 			RestartButton.SetActive(false);
 			NameInputField.SetActive(false);
-			ShipArmor = 1000000;
+			ShipArmor = 1;
 			_rb = GetComponent<Rigidbody>();
 		}
 
