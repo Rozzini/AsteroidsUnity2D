@@ -6,12 +6,12 @@ public class MissleBeh : MonoBehaviour
 {
     public float impulseSpeed = 3f;
     public float movementSpeed = 8f;
-    private Rigidbody _rb;
+    //private Rigidbody _rb;
 
     float tempTime;
     private void Impulse()
     {
-        _rb.velocity += transform.up * impulseSpeed * Time.deltaTime;
+        //_rb.velocity += transform.up * impulseSpeed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
