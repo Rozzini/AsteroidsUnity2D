@@ -10,67 +10,57 @@ public class DataSenderScript : MonoBehaviour
 {
     public InputField inputField;
 
+    public GameObject Field;
+
+    public GameObject SubmitButton;
+
+    public GameObject SubmitionTetx;
+
     string inputText;
 
 
     void Start()
     {
-        inputText = PlayerPrefs.GetString("aaaaaa");
-        inputField.text = inputText;
+        Field.SetActive(true);
+        SubmitButton.SetActive(true);
+        SubmitionTetx.SetActive(false);
+        inputField.text = "";
     }
 
-
-    public void SaveData()
+    public void saveData()
     {
-        PostCrt();
-        //string url = "https://localhost:44333/api/Models";
+        string url = "https://localhost:44333/api/Models";
         inputText = inputField.text;
+        Player player = new Player();
+        player.PlayerName = inputText;
+        player.Score = ScoreScript.ScoreValue;
+        string json = JsonUtility.ToJson(player);
+        StartCoroutine(PostRequest(url, json));
+        Field.SetActive(false);
+        SubmitButton.SetActive(false);
+        SubmitionTetx.SetActive(true);
     }
-    IEnumerator PostCrt()
+
+    IEnumerator PostRequest(string url, string json)
     {
-        WWWForm form = new WWWForm();
-        form.AddField("PlayerName", "ABC");
-        form.AddField("Score", 1234);
+        var uwr = new UnityWebRequest(url, "POST");
+        byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
+        uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
+        uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
+        uwr.SetRequestHeader("Content-Type", "application/json");
 
-        using (UnityWebRequest www = UnityWebRequest.Post("https://localhost:44333/api/Models", form))
+        //Send the request then wait here until it returns
+        yield return uwr.SendWebRequest();
+
+        if (uwr.isNetworkError)
         {
-            yield return www.SendWebRequest();
-
-            if (www.isNetworkError || www.isHttpError)
-            {
-                Debug.Log(www.error);
-            }
-            else
-            {
-                Debug.Log("Post Request Complete!");
-            }
+            Debug.Log("Error While Sending: " + uwr.error);
+        }
+        else
+        {
+            Debug.Log("Received: " + uwr.downloadHandler.text);
         }
     }
-
-    //public void saveData()
-    //{
-    //    string url = "https://localhost:44333/api/Models";
-    //    inputText = inputField.text;
-    //    Player player = new Player();
-    //    player.PlayerName = inputText;
-    //    player.Score = ScoreScript.ScoreValue;
-    //    string json = JsonUtility.ToJson(player);
-    //    Post(url, json);
-    //}
-
-    //[System.Obsolete]
-    //IEnumerator Post(string url, string bodyJsonString)
-    //{
-    //    var request = new UnityWebRequest(url, "POST");
-    //    byte[] bodyRaw = Encoding.UTF8.GetBytes(bodyJsonString);
-    //    request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
-    //    request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
-    //    request.SetRequestHeader("Content-Type", "application/json");
-
-    //    yield return request.Send();
-
-    //    Debug.Log("Status Code: " + request.responseCode);
-    //}
 
 }
 
