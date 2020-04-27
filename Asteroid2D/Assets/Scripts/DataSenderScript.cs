@@ -16,6 +16,8 @@ public class DataSenderScript : MonoBehaviour
 
     public GameObject SubmitionTetx;
 
+    public GameObject TryAgain;
+
     string inputText;
 
 
@@ -24,6 +26,7 @@ public class DataSenderScript : MonoBehaviour
         Field.SetActive(true);
         SubmitButton.SetActive(true);
         SubmitionTetx.SetActive(false);
+        TryAgain.SetActive(false);
         inputField.text = "";
     }
 
@@ -36,9 +39,6 @@ public class DataSenderScript : MonoBehaviour
         player.Score = ScoreScript.ScoreValue;
         string json = JsonUtility.ToJson(player);
         StartCoroutine(PostRequest(url, json));
-        Field.SetActive(false);
-        SubmitButton.SetActive(false);
-        SubmitionTetx.SetActive(true);
     }
 
     IEnumerator PostRequest(string url, string json)
@@ -55,10 +55,15 @@ public class DataSenderScript : MonoBehaviour
         if (uwr.isNetworkError)
         {
             Debug.Log("Error While Sending: " + uwr.error);
+            TryAgain.SetActive(true);
         }
         else
         {
             Debug.Log("Received: " + uwr.downloadHandler.text);
+            Field.SetActive(false);
+            SubmitButton.SetActive(false);
+            SubmitionTetx.SetActive(true);
+            TryAgain.SetActive(false);
         }
     }
 

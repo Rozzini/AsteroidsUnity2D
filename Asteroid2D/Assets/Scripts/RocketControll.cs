@@ -6,7 +6,9 @@ namespace Ship
 {
 	public class RocketControll : MonoBehaviour
 	{
-		public float impulseSpeed = 1.5f;
+		public float impulseSpeed = 0.3f;
+
+		public float maxSpeed = 5;
 
 		public float rotateAngle = 100f;
 
@@ -26,6 +28,7 @@ namespace Ship
 
 		public GameObject NameInputField;
 
+
 		private void OnTriggerEnter(Collider other)
 		{
 			ShipArmor--;
@@ -36,7 +39,7 @@ namespace Ship
 			MenuButton.SetActive(false);
 			RestartButton.SetActive(false);
 			NameInputField.SetActive(false);
-			ShipArmor = 1;
+			ShipArmor = 34236;
 			_rb = GetComponent<Rigidbody>();
 		}
 
@@ -57,27 +60,38 @@ namespace Ship
 
 
 			Vector3 CurPos = transform.position;
-			if (CurPos.x < -9)
+			if (CurPos.x < -8.5)
 			{
-				transform.position = new Vector3(9, CurPos.y, 0);
+				transform.position = new Vector3(8.5f, CurPos.y, 0);
 			}
 
-			if (CurPos.x > 9)
+			if (CurPos.x > 8.5)
 			{
-				transform.position = new Vector3(-9, CurPos.y, 0);
+				transform.position = new Vector3(-8.5f, CurPos.y, 0);
 			}
 
-			if (CurPos.y < -6)
+			if (CurPos.y < -5)
 			{
-				transform.position = new Vector3(CurPos.x, 6, 0);
+				transform.position = new Vector3(CurPos.x, 55, 0);
 			}
 
-			if (CurPos.y > 6)
+			if (CurPos.y > 5)
 			{
-				transform.position = new Vector3(CurPos.x, -6, 0);
+				transform.position = new Vector3(CurPos.x, -5, 0);
 			}
+
+
 			if (Input.GetAxisRaw("Vertical") == 1)
+			{
 				Impulse();
+			}
+
+			if (_rb.velocity.magnitude > maxSpeed)
+			{
+				_rb.velocity = _rb.velocity.normalized * maxSpeed;
+			}
+		
+
 
 			Rotate(Input.GetAxisRaw("Horizontal"));
 
@@ -94,10 +108,9 @@ namespace Ship
 
 		private void Impulse()
 		{
-			if (_rb.velocity.x < 3 || _rb.velocity.y < 3)
-			{
-				_rb.velocity += transform.up * impulseSpeed * Time.deltaTime;
-			}
+			
+			_rb.velocity += transform.up * impulseSpeed * Time.deltaTime;
+			
 		}
 
 		private void Rotate(float rotateDirection)

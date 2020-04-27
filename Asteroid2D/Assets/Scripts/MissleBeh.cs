@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MissleBeh : MonoBehaviour
 {
-    public float impulseSpeed = 3f;
     public float movementSpeed = 8f;
    
 
