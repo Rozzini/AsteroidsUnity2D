@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using Score;
+using System;
 
 public class DataSenderScript : MonoBehaviour
 {
@@ -69,13 +70,11 @@ public class DataSenderScript : MonoBehaviour
 
 }
 
+[Serializable]
 public class Player
 {
     public string PlayerName;
 
     public int Score;
 }
-
-
-
 

@@ -283,6 +283,9 @@
  <Reference Include="Unity.Analytics.StandardEvents">
  <HintPath>D:/unity/Asteroids/AsteroidsUnity2D/Asteroid2D/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>D:/unity/Asteroids/AsteroidsUnity2D/Asteroid2D/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
+ </Reference>
  <Reference Include="netstandard">
  <HintPath>D:/unity/2018.4.7f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
  </Reference>

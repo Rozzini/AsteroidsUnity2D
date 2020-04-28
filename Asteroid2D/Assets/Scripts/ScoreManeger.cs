@@ -1,19 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
+using Newtonsoft.Json;
 
 public class ScoreManeger : MonoBehaviour
 {
 
     private string url = "https://localhost:44333/api/Models";
-
+   
+    private List<Player> playersList = new List<Player>();
     void Start()
     {
-        GetText(url);
-        //CreateText(transform.gameObject.transform, 0, 0, "asdasd", 15);
-        //StartCoroutine(GetScores(url));
+        StartCoroutine(GetRequest(url));
     }
 
     void Update()
@@ -21,31 +22,29 @@ public class ScoreManeger : MonoBehaviour
 
     }
 
-    public void GetText(string url)
+    public void GetText()
     {
-        IEnumerator enumerator = GetRequest(url);
         int x = 0;
         int y = 0;
-        while (enumerator.MoveNext())
+        for(int i = 0; i < playersList.Count; i++)
         {
-            object item = enumerator.Current;
-            Player json = JsonUtility.FromJson<Player>(item);
-            string a = "" + json.PlayerName + "   " + json.Score;
-            CreateText(transform.gameObject.transform, x, y, a, 15);
-            y++;
+            CreateText(transform.gameObject.transform, x, y, playersList[i], 15, i);
+            y += 20;
         }
     }
 
-    GameObject CreateText(Transform canvas_transform, float x, float y, string text_to_print, int font_size)
+    GameObject CreateText(Transform canvas_transform, float x, float y, Player player, int font_size, int iterator)
     {
-        GameObject UItextGO = new GameObject("Text2");
+        string BoxName = "Score" + iterator + 1;
+        string textToPrint = player.PlayerName + "    " + player.Score;
+        GameObject UItextGO = new GameObject(BoxName);
         UItextGO.transform.SetParent(canvas_transform);
 
         RectTransform trans = UItextGO.AddComponent<RectTransform>();
         trans.anchoredPosition = new Vector2(x, y);
 
         Text text = UItextGO.AddComponent<Text>();
-        text.text = text_to_print;
+        text.text = textToPrint;
         text.fontSize = font_size;
         text.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
         text.color = Color.white;
@@ -53,19 +52,31 @@ public class ScoreManeger : MonoBehaviour
         return UItextGO;
     }
 
-
-    IEnumerator GetRequest(string uri)
+    IEnumerator GetRequest(string url)
     {
-        UnityWebRequest uwr = UnityWebRequest.Get(uri);
-        yield return uwr.SendWebRequest();
+        using (UnityWebRequest www = UnityWebRequest.Get(url))
+        {
+            yield return www.SendWebRequest();
 
-        if (uwr.isNetworkError)
-        {
-            Debug.Log("Error While Sending: " + uwr.error);
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log(www.downloadHandler.text);
+                
+                Player[] players = JsonConvert.DeserializeObject<Player[]>(www.downloadHandler.text);
+
+                for( int i = 0; i < players.Length; i++)
+                {
+                    playersList.Add(players[i]);
+                    Debug.Log(players[i].PlayerName);
+                    Debug.Log(players[i].Score);
+                }
+
+            }
         }
-        else
-        {
-            Debug.Log("Received: " + uwr.downloadHandler.text);
-        }
+        GetText();
     }
 }
