@@ -22,7 +22,10 @@ namespace Asteroid2DWeb
 
         public IEnumerable<Model> GetAllPlayers()
         {
-            return appDbContext.Models;
+            var players = from db in appDbContext.Models
+                           select db;
+            players = players.OrderByDescending(db => db.Score);
+            return players;
         }
     }
 }
