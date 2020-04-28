@@ -5,7 +5,6 @@ using Ship;
 using Score;
 using UnityEngine.SceneManagement;
 using System.Data;
-using Mono.Data.Sqlite;
 using UnityEngine.UI;
 
 public class EndGameScript : MonoBehaviour

@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\MenuControlls.cs" />
      <Compile Include="Assets\Scripts\MissleBeh.cs" />
      <Compile Include="Assets\Scripts\RocketControll.cs" />
+     <Compile Include="Assets\Scripts\ScoreManeger.cs" />
      <Compile Include="Assets\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Scripts\ShardBeh.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
@@ -278,9 +279,6 @@
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>D:/unity/2018.4.7f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="Mono.Data.Sqlite">
- <HintPath>D:/unity/Asteroids/AsteroidsUnity2D/Asteroid2D/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
  <HintPath>D:/unity/Asteroids/AsteroidsUnity2D/Asteroid2D/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>

@@ -39,7 +39,7 @@ namespace Ship
 			MenuButton.SetActive(false);
 			RestartButton.SetActive(false);
 			NameInputField.SetActive(false);
-			ShipArmor = 34236;
+			ShipArmor = 3;
 			_rb = GetComponent<Rigidbody>();
 		}
 
@@ -72,7 +72,7 @@ namespace Ship
 
 			if (CurPos.y < -5)
 			{
-				transform.position = new Vector3(CurPos.x, 55, 0);
+				transform.position = new Vector3(CurPos.x, 5, 0);
 			}
 
 			if (CurPos.y > 5)
