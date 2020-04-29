@@ -51,6 +51,8 @@ namespace Asteroid2DWeb
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
