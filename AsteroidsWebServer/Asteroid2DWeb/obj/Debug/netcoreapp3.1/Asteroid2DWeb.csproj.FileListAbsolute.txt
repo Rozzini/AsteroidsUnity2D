@@ -142,3 +142,13 @@ D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\obj\Debug\n
 D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\bin\Debug\netcoreapp3.1\appsettings.json
 D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\bin\Debug\netcoreapp3.1\dbsettings.json
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\bin\Debug\netcoreapp3.1\Asteroid2DWeb.Views.dll
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\bin\Debug\netcoreapp3.1\Asteroid2DWeb.Views.pdb
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\obj\Debug\netcoreapp3.1\Asteroid2DWeb.RazorAssemblyInfo.cache
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\obj\Debug\netcoreapp3.1\Asteroid2DWeb.RazorAssemblyInfo.cs
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\obj\Debug\netcoreapp3.1\Asteroid2DWeb.TagHelpers.input.cache
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\obj\Debug\netcoreapp3.1\Asteroid2DWeb.TagHelpers.output.cache
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\obj\Debug\netcoreapp3.1\Asteroid2DWeb.RazorCoreGenerate.cache
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\obj\Debug\netcoreapp3.1\Asteroid2DWeb.RazorTargetAssemblyInfo.cs
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\obj\Debug\netcoreapp3.1\Asteroid2DWeb.Views.pdb
+D:\unity\Asteroids\AsteroidsUnity2D\AsteroidsWebServer\Asteroid2DWeb\obj\Debug\netcoreapp3.1\Razor\Views\Scores\AllScores.cshtml.g.cs

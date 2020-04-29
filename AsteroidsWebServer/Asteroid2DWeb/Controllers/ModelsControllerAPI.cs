@@ -12,11 +12,11 @@ namespace Asteroid2DWeb.Controllers
 
     [Route("Scores/[Action]")]
     [ApiController]
-    public class ModelsController : ControllerBase
+    public class ModelsControllerAPI : ControllerBase
     {
         private readonly IModel _model;
 
-        public ModelsController(IModel model)
+        public ModelsControllerAPI(IModel model)
         {
             _model = model;
         }
