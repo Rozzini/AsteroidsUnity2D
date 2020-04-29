@@ -33,7 +33,7 @@ public class DataSenderScript : MonoBehaviour
 
     public void saveData()
     {
-        string url = "https://localhost:44333/api/Models";
+        string url = "https://localhost:44333/Scores/PostScore";
         inputText = inputField.text;
         Player player = new Player();
         player.PlayerName = inputText;

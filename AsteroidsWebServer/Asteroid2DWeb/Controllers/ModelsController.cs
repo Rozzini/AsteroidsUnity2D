@@ -9,7 +9,8 @@ using Asteroid2DWeb;
 
 namespace Asteroid2DWeb.Controllers
 {
-    [Route("api/[controller]")]
+
+    [Route("Scores/[Action]")]
     [ApiController]
     public class ModelsController : ControllerBase
     {
@@ -20,15 +21,15 @@ namespace Asteroid2DWeb.Controllers
             _model = model;
         }
 
-        // GET: api/Models
+
         [HttpGet]
-        public IEnumerable<Model> Get()
+        public IEnumerable<Model> GetScores()
         {
             return _model.GetAllPlayers();
         }
 
         [HttpPost]
-        public void Post(Model model)
+        public void PostScore(Model model)
         {
             _model.AddPlayer(model);
 

@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 public class ScoreManeger : MonoBehaviour
 {
 
-    private string url = "https://localhost:44333/api/Models";
+    private string url = "https://localhost:44333/Scores/GetScores";
 
     public RectTransform prefab;
 
