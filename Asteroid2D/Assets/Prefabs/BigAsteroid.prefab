@@ -100,6 +100,9 @@ MonoBehaviour:
     type: 3}
   sprite1: {fileID: 21300000, guid: 099887def0286bd49a304c01a8c649db, type: 3}
   sprite2: {fileID: 21300000, guid: 700c9993e46060a43b74a9d0117050d2, type: 3}
+  sprite3: {fileID: 21300000, guid: 329148172f8e52943918f5df6da71beb, type: 3}
+  sprite4: {fileID: 21300000, guid: c278dafb7fb388a43955f9d657515560, type: 3}
+  sprite5: {fileID: 21300000, guid: 594edd27bb36d014cab13d47b4c01134, type: 3}
 --- !u!65 &65867254290291202
 BoxCollider:
   m_ObjectHideFlags: 0

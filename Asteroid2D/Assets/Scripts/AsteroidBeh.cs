@@ -12,6 +12,9 @@ public class AsteroidBeh : MonoBehaviour
     private bool isDestroyed = false;
     public Sprite sprite1; 
     public Sprite sprite2;
+    public Sprite sprite3;
+    public Sprite sprite4;
+    public Sprite sprite5;
     private float SpeenSpeed = 0.5f;
 
 
@@ -81,15 +84,30 @@ public class AsteroidBeh : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); 
-        int SpriteChoice = Random.Range(-10, 10);
-        if (SpriteChoice >= 0)
+        int SpriteChoice = Random.Range(1, 6);
+        Debug.Log(SpriteChoice);
+        if (SpriteChoice == 1)
         {
             spriteRenderer.sprite = sprite1;
         }
-        else
+        else if (SpriteChoice == 2)
         {
             spriteRenderer.sprite = sprite2;
             SpeenSpeed *= -1;
+        }
+        else if (SpriteChoice == 3)
+        {
+            spriteRenderer.sprite = sprite3;
+        }
+        else if (SpriteChoice == 4)
+        {
+            spriteRenderer.sprite = sprite4;
+            SpeenSpeed *= -1;
+        }
+        else if (SpriteChoice == 5)
+        {
+            spriteRenderer.sprite = sprite5;
+            SpeenSpeed = 0.0f;
         }
         SetDirection();
     }
