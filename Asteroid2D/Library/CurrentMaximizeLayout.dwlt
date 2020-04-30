@@ -21,8 +21,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 683, y: 498}
-  m_MaxSize: {x: 14004, y: 14048}
+  m_MinSize: {x: 683, y: 348}
+  m_MaxSize: {x: 12008, y: 8048}
   vertical: 0
   controlID: 106
 --- !u!114 &2
@@ -126,8 +126,8 @@ MonoBehaviour:
     y: 0
     width: 1446
     height: 947
-  m_MinSize: {x: 406, y: 498}
-  m_MaxSize: {x: 10002, y: 14048}
+  m_MinSize: {x: 406, y: 348}
+  m_MaxSize: {x: 8006, y: 8048}
   vertical: 1
   controlID: 107
 --- !u!114 &4
@@ -212,7 +212,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: dcf9fffff4f9ffff18fbffff2afbffffdefbffff
+      m_ExpandedIDs: 8af9ffffa2f9ffffa4f9ffffa8f9ffffe6f9fffffef9ffff2efbffff32fbffffdefbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -295,9 +295,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.9306402, y: -1.6369258, z: 0.10847701}
+    m_Target: {x: 389.11356, y: 305.23013, z: -9.256503}
     speed: 2
-    m_Value: {x: 3.9306402, y: -1.6369258, z: 0.10847701}
+    m_Value: {x: 389.11356, y: 305.23013, z: -9.256503}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -329,9 +329,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.767037
+    m_Target: 947.20856
     speed: 2
-    m_Value: 10.767037
+    m_Value: 947.20856
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -388,14 +388,14 @@ MonoBehaviour:
     y: 640
     width: 1446
     height: 307
-  m_MinSize: {x: 232, y: 274}
-  m_MaxSize: {x: 10002, y: 10024}
-  m_ActualView: {fileID: 11}
+  m_MinSize: {x: 102, y: 124}
+  m_MaxSize: {x: 4002, y: 4024}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -553,7 +553,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 713
-    width: 1438
+    width: 1444
     height: 287
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &13
