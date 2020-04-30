@@ -8,10 +8,13 @@
 }
 
 table {
+    display: table;
     padding-left: 46%;
+    position: fixed;
 }
 
 h2 {
     padding-top: 30px;
     padding-right: 38px;
 }
+
