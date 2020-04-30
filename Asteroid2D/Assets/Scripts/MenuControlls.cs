@@ -8,6 +8,7 @@ public class MenuControlls : MonoBehaviour
 
     public GameObject Menu;
     public GameObject ScoreBoard;
+   
     public void PlayPressed()
     {
         SceneManager.LoadScene("Game");
@@ -23,5 +24,10 @@ public class MenuControlls : MonoBehaviour
     {
         Menu.SetActive(true);
         ScoreBoard.SetActive(false);
+    }
+
+    public void doExitGame()
+    {
+        Application.Quit();
     }
 }
