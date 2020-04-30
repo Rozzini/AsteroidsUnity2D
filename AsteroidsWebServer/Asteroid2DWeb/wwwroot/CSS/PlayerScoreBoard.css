@@ -1,17 +1,4 @@
-﻿body{
-    background-color: black;
-}
-
-*{
-    color: white;
-    font-family: Arial;
-}
-
-table {
-    padding-left: 46%;
-}
-
-h2 {
-    padding-top: 30px;
-    padding-right: 38px;
+﻿html, body {
+    margin: 0;
+    padding: 0;
 }
