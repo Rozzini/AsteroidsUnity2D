@@ -14,7 +14,6 @@ public class AsteroidBeh : MonoBehaviour
     public Sprite sprite2;
     public Sprite sprite3;
     public Sprite sprite4;
-    public Sprite sprite5;
     private float SpeenSpeed = 0.5f;
 
 
@@ -84,7 +83,7 @@ public class AsteroidBeh : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); 
-        int SpriteChoice = Random.Range(1, 6);
+        int SpriteChoice = Random.Range(1, 5);
         Debug.Log(SpriteChoice);
         if (SpriteChoice == 1)
         {
@@ -103,11 +102,6 @@ public class AsteroidBeh : MonoBehaviour
         {
             spriteRenderer.sprite = sprite4;
             SpeenSpeed *= -1;
-        }
-        else if (SpriteChoice == 5)
-        {
-            spriteRenderer.sprite = sprite5;
-            SpeenSpeed = 0.0f;
         }
         SetDirection();
     }
