@@ -1,5 +1,11 @@
 ﻿var x;
 var changeDirection;
+var image;
+
+
+function preload() {
+	image = loadImage('AsteroidType2.png');
+}
 
 function setup() {
 	createCanvas(1920, 1080);
