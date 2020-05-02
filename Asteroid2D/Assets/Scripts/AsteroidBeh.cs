@@ -5,14 +5,17 @@ using Score;
 
 public class AsteroidBeh : MonoBehaviour
 {
-
     private Vector3 dir = new Vector3(100, 0, 0);
     public float movementSpeed = 5.0f;
     public Vector3 DirectionVector;
     public GameObject AsteroidShard;
     private bool isDestroyed = false;
     public Sprite sprite1; 
-    public Sprite sprite2; 
+    public Sprite sprite2;
+    public Sprite sprite3;
+    public Sprite sprite4;
+    private float SpeenSpeed = 0.5f;
+
 
     private SpriteRenderer spriteRenderer;
 
@@ -80,14 +83,25 @@ public class AsteroidBeh : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); 
-        int SpriteChoice = Random.Range(-10, 10);
-        if (SpriteChoice >= 0)
+        int SpriteChoice = Random.Range(1, 5);
+        Debug.Log(SpriteChoice);
+        if (SpriteChoice == 1)
         {
             spriteRenderer.sprite = sprite1;
         }
-        else
+        else if (SpriteChoice == 2)
         {
             spriteRenderer.sprite = sprite2;
+            SpeenSpeed *= -1;
+        }
+        else if (SpriteChoice == 3)
+        {
+            spriteRenderer.sprite = sprite3;
+        }
+        else if (SpriteChoice == 4)
+        {
+            spriteRenderer.sprite = sprite4;
+            SpeenSpeed *= -1;
         }
         SetDirection();
     }
@@ -106,6 +120,7 @@ public class AsteroidBeh : MonoBehaviour
         }
         Destroy(gameObject, 10);
         transform.position += DirectionVector * Time.deltaTime * movementSpeed;
+        transform.Rotate(new Vector3(0, 0, SpeenSpeed));
     }
     
 }
