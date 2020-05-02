@@ -37,10 +37,6 @@ namespace Asteroid2DWeb
             services.AddTransient<IModel, ModelRepository>();
 
             services.AddControllersWithViews();
-
-            //services.AddDbContext<Asteroid2DWebContext>(options =>
-            //        options.UseSqlServer(Configuration.GetConnectionString("Asteroid2DWebContext")));
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,6 +6,9 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using Score;
 using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
+using System.Net;
 
 public class DataSenderScript : MonoBehaviour
 {
@@ -21,7 +24,7 @@ public class DataSenderScript : MonoBehaviour
 
     string inputText;
 
-    string url = "https://localhost:44333/Scores/PostScore";
+    string url = "https://192.168.0.104:5566/Scores/PostScore";
 
     void Start()
     {
@@ -44,7 +47,9 @@ public class DataSenderScript : MonoBehaviour
 
     IEnumerator PostRequest(string json)
     {
+        ServicePointManager.ServerCertificateValidationCallback = TrustCertificate;
         var uwr = new UnityWebRequest(url, "POST");
+        uwr.certificateHandler = new BypassCertificate();
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
         uwr.uploadHandler = (UploadHandler)new UploadHandlerRaw(jsonToSend);
         uwr.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
@@ -68,6 +73,12 @@ public class DataSenderScript : MonoBehaviour
         }
     }
 
+    private static bool TrustCertificate(object sender, X509Certificate x509Certificate, X509Chain x509Chain, SslPolicyErrors sslPolicyErrors)
+    {
+        // all Certificates are accepted
+        return true;
+    }
+
 }
 
 [Serializable]
@@ -78,3 +89,10 @@ public class Player
     public int Score;
 }
 
+public class BypassCertificate : CertificateHandler
+{
+    protected override bool ValidateCertificate(byte[] certificateData)
+    {
+        return true;
+    }
+}

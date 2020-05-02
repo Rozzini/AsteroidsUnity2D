@@ -5,11 +5,14 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using Newtonsoft.Json;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
+using System.Net;
 
 public class ScoreManeger : MonoBehaviour
 {
 
-    private string url = "https://localhost:44333/Scores/GetScores";
+    private string url = "https://192.168.0.104:5566/Scores/GetScores";
 
     public RectTransform prefab;
 
@@ -50,6 +53,8 @@ public class ScoreManeger : MonoBehaviour
     {
         using (UnityWebRequest www = UnityWebRequest.Get(url))
         {
+            www.certificateHandler = new BypassCertificate();
+
             yield return www.SendWebRequest();
 
             if (www.isNetworkError || www.isHttpError)
@@ -72,5 +77,13 @@ public class ScoreManeger : MonoBehaviour
             }
         }
         CreateText();
+    }
+
+    public class BypassCertificate : CertificateHandler
+    {
+        protected override bool ValidateCertificate(byte[] certificateData)
+        {
+            return true;
+        }
     }
 }
