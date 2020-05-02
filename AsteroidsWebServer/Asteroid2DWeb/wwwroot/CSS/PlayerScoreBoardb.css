@@ -9,8 +9,8 @@
 }
 
 #textContainer {
-    background-image: url("https://media.giphy.com/media/IRFQYGCokErS0/giphy.gif");
-    background-size: cover;
+    background-image: url("/images/Animation.gif");
+    background-attachment: fixed;
     background-repeat: no-repeat;
     color: white;
     width: 100%;
@@ -22,14 +22,16 @@
 }
 
 
-
 #textContent {
-    background-image: url("../images/scoreBG.png");
+    text-align: center;
+    flex: 0 0 500px;
+    background-image: url("/images/Back.png");
     background-size: contain;
-    flex: 0 0 150px;
 }
 
 
-
-
+table {
+    margin-left:auto;
+    margin-right:auto;
+}
 
