@@ -21,6 +21,7 @@ public class DataSenderScript : MonoBehaviour
 
     string inputText;
 
+    string url = "https://localhost:44333/Scores/PostScore";
 
     void Start()
     {
@@ -33,16 +34,15 @@ public class DataSenderScript : MonoBehaviour
 
     public void saveData()
     {
-        string url = "https://localhost:44333/Scores/PostScore";
         inputText = inputField.text;
         Player player = new Player();
         player.PlayerName = inputText;
         player.Score = ScoreScript.ScoreValue;
         string json = JsonUtility.ToJson(player);
-        StartCoroutine(PostRequest(url, json));
+        StartCoroutine(PostRequest(json));
     }
 
-    IEnumerator PostRequest(string url, string json)
+    IEnumerator PostRequest(string json)
     {
         var uwr = new UnityWebRequest(url, "POST");
         byte[] jsonToSend = new System.Text.UTF8Encoding().GetBytes(json);
