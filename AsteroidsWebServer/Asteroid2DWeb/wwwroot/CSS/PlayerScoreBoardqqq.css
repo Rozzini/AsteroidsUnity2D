@@ -1,0 +1,35 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+*{
+    color: white;
+}
+
+#textContainer {
+    background-image: url("https://media.giphy.com/media/IRFQYGCokErS0/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+#textContent {
+    background-image: url("../images/scoreBG.png");
+    background-size: contain;
+    flex: 0 0 150px;
+}
+
+
+
+
+
