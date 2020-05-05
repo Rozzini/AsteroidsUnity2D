@@ -20,12 +20,24 @@ namespace Asteroid2DWeb
             appDbContext.SaveChanges();
         }
 
-        public IEnumerable<Model> GetAllPlayers()
+        public IEnumerable<Model> GetAllPlayers(string Order)
         {
             var players = from db in appDbContext.Models
                            select db;
-            players = players.OrderByDescending(db => db.Score);
-            return players;
+            if (Order == "des")
+            {
+                players = players.OrderByDescending(db => db.Score);
+                return players;
+            }
+            if (Order == "asc")
+            {
+                players = players.OrderBy(db => db.Score);
+                return players;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

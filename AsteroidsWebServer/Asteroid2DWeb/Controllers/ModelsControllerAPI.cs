@@ -23,9 +23,9 @@ namespace Asteroid2DWeb.Controllers
 
 
         [HttpGet]
-        public IEnumerable<Model> GetScores()
+        public IEnumerable<Model> GetScores(string order)
         {
-            return _model.GetAllPlayers();
+            return _model.GetAllPlayers(order);
         }
 
         [HttpPost]

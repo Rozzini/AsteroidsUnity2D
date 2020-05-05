@@ -18,7 +18,7 @@ namespace Asteroid2DWeb.Controllers
 
         public IActionResult AllScores()
         {
-            return View(_model.GetAllPlayers());
+            return View(_model.GetAllPlayers("des"));
         }
     }
 }

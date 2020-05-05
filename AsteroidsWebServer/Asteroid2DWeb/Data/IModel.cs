@@ -7,7 +7,7 @@ namespace Asteroid2DWeb
 {
     public interface IModel
     {
-        IEnumerable<Model> GetAllPlayers();
+        IEnumerable<Model> GetAllPlayers(string order);
 
         void AddPlayer(Model models);
     }
